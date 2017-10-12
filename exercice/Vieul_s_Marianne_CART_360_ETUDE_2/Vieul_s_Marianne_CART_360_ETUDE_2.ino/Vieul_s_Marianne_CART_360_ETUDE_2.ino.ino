@@ -229,7 +229,7 @@ void reset()
  **************************************************************************/
 void live()
 {
-  //on joue en live (vers la pin du buzzer) la valeur lue en alaogique, pour le temps défini par la variable "duration" 
+  //on joue en live (vers la pin du buzzer) la valeur lue en analogique, pour le temps défini par la variable "duration" 
   tone(BUZZER_PIN, analogRead(NOTE_IN_PIN), duration);
 }
 /******************RECORD(): IMPLEMENT **********************************
@@ -243,7 +243,7 @@ void live()
  **************************************************************************/
 void record()
 {
-//tantq ue le compte des notes est inferieur à 16
+//tant que le compte des notes est inferieur à 16
   if (countNotes<16) {
     if(analogRead(NOTE_IN_PIN)>0) {
       //on stocke dans l'array ls notes jouées

@@ -442,7 +442,7 @@ void updateArraysWithNoteAndTimings()
 durations [countNotes]=timePassed;
 
 countNotes++;
-activeNoteButton = !activeNoteButton;
+activeNoteButton = false;
 timePassed=0;
 
 
@@ -508,6 +508,10 @@ void playWithDuration()
 //on fait rejouer les notes stockées dans l'array
     for(int i=0;i<countNotes; i++) {
     tone(BUZZER_PIN, notes[i], durations[i]);
+
+    int colorSwitch = map(notes[i],0,1023,0,255);
+    colorLED(colorSwitch);
+    
     delay(durations[i]);
     delay(100);
     
